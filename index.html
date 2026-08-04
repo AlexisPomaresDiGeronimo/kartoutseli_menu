@@ -1,127 +1,57 @@
-<!DOCTYPE html>
-<html lang="el">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Καρτούτσελης | Καφενείο • Μεζεδοπωλείο</title>
-
-    <meta name="description"
-          content="Καρτούτσελης - Καφενείο & Μεζεδοπωλείο">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
 <body>
 
-    <header class="hero">
+<header class="hero">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="badge">
-                ☕ • 🍷 • 🍤
-            </div>
-
-            <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
-
-            <p class="subtitle">
-                Καφενείο • Μεζεδοπωλείο
-            </p>
-
-            <button id="menuBtn" class="hero-btn">
-                Δείτε το Μενού
-            </button>
-
+        <div class="badge">
+            ☕ • 🍷 • 🍤
         </div>
 
-    </header>
+        <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
 
-    <nav id="categories" class="categories">
-        <!-- Δημιουργείται αυτόματα από το script.js -->
-    </nav>
+        <p class="subtitle">
+            Καφενείο • Μεζεδοπωλείο
+        </p>
 
-    <main class="container">
+    </div>
 
-        <div id="menu">
-            <!-- Δημιουργείται αυτόματα από το script.js -->
-        </div>
+</header>
 
-    </main>
+<nav id="categories" class="categories"></nav>
 
-    <button id="topBtn" class="top-btn" aria-label="Πίσω στην κορυφή">
-        ↑
-    </button>
+<main class="container">
+    <div id="menu"></div>
+</main>
 
-    <footer>
+<button id="topBtn" class="top-btn">
+    ↑
+</button>
 
-        <h3>ΚΑΡΤΟΥΤΣΕΛΗΣ</h3>
+<footer>
+    <h3>ΚΑΡΤΟΥΤΣΕΛΗΣ</h3>
+    <p>Καφενείο • Μεζεδοπωλείο</p>
+</footer>
 
-        <p>Καφενείο • Μεζεδοπωλείο</p>
+<script src="script.js"></script>
 
-        <p>Πάξοι, Ελλάδα</p>
+<script>
+const topBtn = document.getElementById("topBtn");
 
-        <p id="copyright"></p>
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        topBtn.classList.add("show");
+    } else {
+        topBtn.classList.remove("show");
+    }
+});
 
-    </footer>
-
-    <script src="script.js"></script>
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-            const menuBtn = document.getElementById("menuBtn");
-
-            if(menuBtn){
-
-                menuBtn.addEventListener("click", () => {
-
-                    document
-                        .getElementById("menu")
-                        .scrollIntoView({
-                            behavior: "smooth"
-                        });
-
-                });
-
-            }
-
-            const topBtn = document.getElementById("topBtn");
-
-            window.addEventListener("scroll", () => {
-
-                if(window.scrollY > 300){
-
-                    topBtn.classList.add("show");
-
-                }else{
-
-                    topBtn.classList.remove("show");
-
-                }
-
-            });
-
-            topBtn.addEventListener("click", () => {
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            });
-
-            document.getElementById("copyright").textContent =
-                © ${new Date().getFullYear()} Καρτούτσελης;
-
-        });
-
-    </script>
+topBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
 
 </body>
-</html>
