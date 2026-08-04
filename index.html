@@ -1,57 +1,26 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Καρτούτσελης</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
 <header class="hero">
-
-    <div class="hero-content">
-
-        <div class="badge">
-            ☕ • 🍷 • 🍤
-        </div>
-
-        <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
-
-        <p class="subtitle">
-            Καφενείο • Μεζεδοπωλείο
-        </p>
-
-    </div>
-
+    <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
+    <p>Καφενείο • Μεζεδοπωλείο</p>
 </header>
 
-<nav id="categories" class="categories"></nav>
+<nav id="categories"></nav>
 
-<main class="container">
-    <div id="menu"></div>
-</main>
-
-<button id="topBtn" class="top-btn">
-    ↑
-</button>
-
-<footer>
-    <h3>ΚΑΡΤΟΥΤΣΕΛΗΣ</h3>
-    <p>Καφενείο • Μεζεδοπωλείο</p>
-</footer>
+<div id="menu"></div>
 
 <script src="script.js"></script>
 
-<script>
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        topBtn.classList.add("show");
-    } else {
-        topBtn.classList.remove("show");
-    }
-});
-
-topBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-</script>
-
 </body>
+</html>
