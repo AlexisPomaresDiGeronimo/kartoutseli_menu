@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Καρτούτσελης | Καφενείο • Μεζεδοπωλείο</title>
+
+    <meta name="description"
+          content="Καρτούτσελης - Καφενείο & Μεζεδοπωλείο">
 
     https://fonts.googleapis.com
     https://fonts.gstatic.com
@@ -14,10 +16,10 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <header class="hero">
+
         <div class="hero-content">
 
             <div class="badge">
@@ -35,61 +37,90 @@
             </button>
 
         </div>
+
     </header>
 
-    <nav id="categories" class="categories"></nav>
+    <nav id="categories" class="categories">
+        <!-- Δημιουργείται αυτόματα από το script.js -->
+    </nav>
 
     <main class="container">
-        <div id="menu"></div>
+
+        <div id="menu">
+            <!-- Δημιουργείται αυτόματα από το script.js -->
+        </div>
+
     </main>
 
-    <button id="topBtn" class="top-btn">
+    <button id="topBtn" class="top-btn" aria-label="Πίσω στην κορυφή">
         ↑
     </button>
 
     <footer>
+
         <h3>ΚΑΡΤΟΥΤΣΕΛΗΣ</h3>
+
         <p>Καφενείο • Μεζεδοπωλείο</p>
-        <p>© 2026</p>
+
+        <p>Πάξοι, Ελλάδα</p>
+
+        <p id="copyright"></p>
+
     </footer>
 
     <script src="script.js"></script>
 
     <script>
 
-        document.getElementById("menuBtn")
-            .addEventListener("click", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
-                document.getElementById("menu")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+            const menuBtn = document.getElementById("menuBtn");
 
-            });
+            if(menuBtn){
 
-        const topBtn = document.getElementById("topBtn");
+                menuBtn.addEventListener("click", () => {
 
-        window.addEventListener("scroll", () => {
+                    document
+                        .getElementById("menu")
+                        .scrollIntoView({
+                            behavior: "smooth"
+                        });
 
-            if (window.scrollY > 300) {
-                topBtn.classList.add("show");
-            } else {
-                topBtn.classList.remove("show");
+                });
+
             }
 
-        });
+            const topBtn = document.getElementById("topBtn");
 
-        topBtn.addEventListener("click", () => {
+            window.addEventListener("scroll", () => {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+                if(window.scrollY > 300){
+
+                    topBtn.classList.add("show");
+
+                }else{
+
+                    topBtn.classList.remove("show");
+
+                }
+
             });
+
+            topBtn.addEventListener("click", () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            });
+
+            document.getElementById("copyright").textContent =
+                © ${new Date().getFullYear()} Καρτούτσελης;
 
         });
 
     </script>
 
 </body>
-
 </html>
