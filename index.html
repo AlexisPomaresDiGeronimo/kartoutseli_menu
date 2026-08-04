@@ -1,45 +1,95 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Καρτούτσελης</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Καρτούτσελης | Καφενείο • Μεζεδοπωλείο</title>
 
     https://fonts.googleapis.com
     https://fonts.gstatic.com
 
     https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="hero">
+    <header class="hero">
+        <div class="hero-content">
 
-    <div class="hero-content">
+            <div class="badge">
+                ☕ • 🍷 • 🍤
+            </div>
 
-        <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
+            <h1>ΚΑΡΤΟΥΤΣΕΛΗΣ</h1>
 
+            <p class="subtitle">
+                Καφενείο • Μεζεδοπωλείο
+            </p>
+
+            <button id="menuBtn" class="hero-btn">
+                Δείτε το Μενού
+            </button>
+
+        </div>
+    </header>
+
+    <nav id="categories" class="categories"></nav>
+
+    <main class="container">
+        <div id="menu"></div>
+    </main>
+
+    <button id="topBtn" class="top-btn">
+        ↑
+    </button>
+
+    <footer>
+        <h3>ΚΑΡΤΟΥΤΣΕΛΗΣ</h3>
         <p>Καφενείο • Μεζεδοπωλείο</p>
+        <p>© 2026</p>
+    </footer>
 
-        <button id="menuBtn">
-            Δείτε το Μενού
-        </button>
+    <script src="script.js"></script>
 
-    </div>
+    <script>
 
-</header>
+        document.getElementById("menuBtn")
+            .addEventListener("click", () => {
 
-<nav id="categories"></nav>
+                document.getElementById("menu")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
 
-<main id="menu"></main>
+            });
 
-<footer>
-    <p>© 2026 Καρτούτσελης</p>
-</footer>
+        const topBtn = document.getElementById("topBtn");
 
-<script defer src="script.js"></script>
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 300) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+
+        });
+
+        topBtn.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    </script>
 
 </body>
+
 </html>
