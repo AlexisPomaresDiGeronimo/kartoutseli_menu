@@ -1,66 +1,263 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 :root{
-  --wine:#4b0d16;
-  --cream:#f8f4ed;
-  --gold:#c8a96b;
+    --wine:#4f0f18;
+    --wine-dark:#33060d;
+    --gold:#c7a16a;
+    --cream:#f7f2eb;
+    --text:#401117;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  background:
-    radial-gradient(circle at top,#fff 0%,#f8f4ed 50%,#f1ece4 100%);
-  color:var(--wine);
-  font-family:'Cormorant Garamond',serif;
-  min-height:100vh;
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Cormorant Garamond', serif;
 }
 
-.menu{
-  width:min(1300px,95%);
-  margin:auto;
-  padding:60px 40px;
+.hero{
+
+    background:
+    linear-gradient(
+        rgba(79,15,24,.88),
+        rgba(51,6,13,.95)
+    );
+
+    color:white;
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-header{
-  text-align:center;
-  margin-bottom:70px;
+.logo-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:25px;
 }
 
-header h1{
-  font-size:5rem;
-  letter-spacing:8px;
-  font-weight:700;
-  color:var(--wine);
+.icon{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+    color:var(--wine);
+
+    border-radius:16px;
+
+    font-size:32px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
 }
 
-header p{
-  font-size:1.6rem;
-  margin-top:10px;
-  color:#6d3139;
+.hero h1{
+
+    font-size:4.5rem;
+    letter-spacing:6px;
+    margin-bottom:10px;
 }
 
-.columns{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
+.hero p{
+
+    font-size:1.4rem;
+    color:#efe0cb;
 }
 
-section{
-  margin-bottom:50px;
+nav{
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+
+    background:white;
+
+    padding:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-section h2{
-  font-size:2.8rem;
-  margin-bottom:25px;
-  color:var(--wine);
-  border-bottom:2px solid var(--gold);
-  padding-bottom:10px;
+nav a{
+
+    text-decoration:none;
+
+    color:var(--wine);
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+}
+
+main{
+
+    width:min(1400px,95%);
+
+    margin:auto;
+
+    padding:40px 0;
+
+    column-count:2;
+    column-gap:40px;
+}
+
+.category{
+
+    break-inside:avoid;
+
+    background:white;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    border-top:5px solid var(--wine);
+}
+
+.category h2{
+
+    color:var(--wine);
+
+    font-size:2.4rem;
+
+    margin-bottom:20px;
+
+    letter-spacing:2px;
 }
 
 .item{
-  display:flex;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:9px 0;
+
+    border-bottom:1px dashed rgba(0,0,0,.12);
+
+    transition:.25s;
+}
+
+.item:hover{
+
+    transform:translateX(5px);
+}
+
+.item span:first-child{
+
+    font-size:1.35rem;
+
+    max-width:75%;
+}
+
+.item span:last-child{
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:var(--wine);
+
+    white-space:nowrap;
+}
+
+footer{
+
+    background:var(--wine);
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    margin-top:40px;
+}
+
+footer h3{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+footer p{
+
+    margin:5px 0;
+}
+
+@media (max-width:1000px){
+
+    main{
+        column-count:1;
+    }
+
+    .hero h1{
+        font-size:3rem;
+        letter-spacing:3px;
+    }
+}
+
+@media (max-width:600px){
+
+    .hero{
+
+        padding:50px 15px;
+    }
+
+    .icon{
+
+        width:55px;
+        height:55px;
+        font-size:25px;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .category{
+
+        padding:18px;
+    }
+
+    .category h2{
+
+        font-size:2rem;
+    }
+
+    .item span:first-child{
+
+        font-size:1.1rem;
+    }
+
+    .item span:last-child{
+
+        font-size:1.1rem;
+    }
+}
